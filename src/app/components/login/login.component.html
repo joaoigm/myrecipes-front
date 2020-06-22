@@ -1,0 +1,18 @@
+<h2>Login</h2>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Email</label>
+        <input type="text" id="email" name="email" [(ngModel)]="model.email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="model.password" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form>

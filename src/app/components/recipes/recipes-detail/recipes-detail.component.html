@@ -1,1 +1,12 @@
-<p>recipes-detail works!</p>
+<div>
+    <p>ID: {{recipe.id}}</p>
+    <p>Titulo: {{recipe.title}}</p>
+    <p>Ingredientes: </p>
+    <div *ngFor="let ingredient of recipe.ingredients">
+        <p>{{ingredient.name}} - {{ingredient.measure}}</p>
+    </div>
+    <label>Passos</label>
+    <div *ngFor="let step of recipe.steps">
+        <p>{{step.description}} - tempo(dias-horas-minutos-segundos): {{step.days}}:{{step.hours}}:{{step.minutes}}:{{step.seconds}}</p>
+    </div>
+</div>

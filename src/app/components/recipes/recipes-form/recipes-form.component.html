@@ -1,1 +1,55 @@
-<p>recipes-form works!</p>
+<div class="container">
+    <form *ngIf="actionType == 'create'" #createRecipeForm="ngForm" (ngSubmit)=onCreateSubmit()>
+        Titulo: <input type="text" name="title" [(ngModel)]="recipe.title" placeholder="Titulo da Receita">
+
+        <div *ngFor="let ingredient of recipe.ingredients" style="margin-bottom: 20px;">
+            <input type="text" name="ingredientName" [(ngModel)]="ingredient.name" placeholder="Nome do Ingrediente">
+            <input type="text" name="ingredientMeasure" [(ngModel)]="ingredient.measure"
+                placeholder="Medida do Ingrediente">
+            <button type="button" (click)="removeIngredient(ingredient)"></button>
+        </div>
+        <br>
+        <button type="button" (click)="addIngredient()">Adicionar Ingrediente</button>
+
+
+        <div *ngFor="let step of recipe.steps">
+            <input type="text" name="stepDescription" [(ngModel)]="step.description" placeholder="Descrição do passo">
+            <input type="number" name="stepDays" [(ngModel)]="step.days" placeholder="Dias">
+            <input type="number" name="stepHours" [(ngModel)]="step.hours" placeholder="Horas">
+            <input type="number" name="stepMinutes" [(ngModel)]="step.minutes" placeholder="Minutos">
+            <input type="number" name="stepSeconds" [(ngModel)]="step.seconds" placeholder="Segundos">
+            <button type="button" (click)="removeStep(step)"></button>
+        </div>
+        <br>
+        <button type="button" (click)="addStep()">Adicionar Passo</button>
+
+        <br>
+        <button type="submit">Criar</button>
+    </form>
+    <form *ngIf="actionType == 'update'" #updateRecipeForm="ngForm" (ngSubmit)="onUpdateSubmit()">
+        Titulo: <input type="text" name="title" [(ngModel)]="recipe.title" placeholder="Titulo da Receita">
+        
+            <div *ngFor="let ingredient of recipe.ingredients" style="margin-bottom: 20px;">
+                <input type="text" name="ingredientName" [(ngModel)]="ingredient.name"
+                    placeholder="Nome do Ingrediente">
+                <input type="text" name="ingredientMeasure" [(ngModel)]="ingredient.measure"
+                    placeholder="Medida do Ingrediente">
+                <button type="button" (click)="removeIngredient(ingredient)"></button>
+            </div>
+            <br>
+            <button type="button" (click)="addIngredient()">Adicionar Ingrediente</button>
+            <div *ngFor="let step of recipe.steps">
+                <input type="text" name="stepDescription" [(ngModel)]="step.description"
+                    placeholder="Descrição do passo">
+                <input type="number" name="stepDays" [(ngModel)]="step.days" placeholder="Dias">
+                <input type="number" name="stepHours" [(ngModel)]="step.hours" placeholder="Horas">
+                <input type="number" name="stepMinutes" [(ngModel)]="step.minutes" placeholder="Minutos">
+                <input type="number" name="stepSeconds" [(ngModel)]="step.seconds" placeholder="Segundos">
+                <button type="button" (click)="removeStep(step)"></button>
+            </div>
+            <br>
+            <button type="button" (click)="addStep()">Adicionar Passo</button>
+        <br>
+        <button type="submit">Atualizar</button>
+    </form>
+</div>

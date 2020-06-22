@@ -6,8 +6,8 @@ import { HttpHeaders } from '@angular/common/http';
 
 export const environment = {
   production: false,
-  recipes_service_url: '',
-  users_service_url: ''
+  recipes_service_url: 'http://127.0.0.1:8001/api/recipes',
+  users_service_url: 'http://127.0.0.1:8000/api/users'
 };
 
 /*

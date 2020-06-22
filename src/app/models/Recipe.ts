@@ -3,11 +3,14 @@ import { Step } from './Step'
 
 export class Recipe {
 
-    id: number
+    id: String
     title: String
     description?: String
     ingredients: Ingredient[]
     steps: Step[]
 
-    constructor(){}
+    constructor(){
+        this.ingredients = [];
+        this.steps = [];
+    }
 }

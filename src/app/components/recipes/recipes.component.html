@@ -1,1 +1,25 @@
-<p>recipes works!</p>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+                    ID
+                </td>
+                <td>
+                    Titulo
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let recipe of recipes">
+                <td>{{recipe.id}}</td>
+                <td>{{recipe.title}}</td>
+                <td><a [routerLink]="[recipe.id, 'details']">Detalhes</a></td>
+                <td><a [routerLink]="[recipe.id, 'update']">Alterar</a></td>
+                <td><button type="button" (click)="delete(recipe)">Excluir</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

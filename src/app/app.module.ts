@@ -9,22 +9,30 @@ import { RecipesFormComponent } from './components/recipes/recipes-form/recipes-
 import { UsersService } from './services/users/users.service';
 import { RecipesService } from './services/recipes/recipes.service';
 import { HttpClientModule } from '@angular/common/http'
+import { AuthenticationService } from './services/auth/authentication.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesComponent,
     RecipesDetailComponent,
-    RecipesFormComponent
+    RecipesFormComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     UsersService,
-    RecipesService
+    RecipesService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

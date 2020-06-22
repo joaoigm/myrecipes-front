@@ -1,5 +1,10 @@
 export class User {
-    id: number
-    email: string
-    password: string
+    id: String
+    email: String
+    password: String
+
+    constructor(email: String = null){
+        this.email = email;
+    }
+    
 }
