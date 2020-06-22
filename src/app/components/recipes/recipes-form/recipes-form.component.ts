@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-form',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesFormComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  actionType: String
+  constructor(router: Router) {
+    if(router.url.indexOf('update') > -1){
+      this.actionType = 'update';
+    } else {
+      this.actionType = 'create';
+    }
   }
 
+  ngOnInit(): void {
+    
+  }
 }

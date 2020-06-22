@@ -1,0 +1,13 @@
+import { Ingredient } from './Ingredient'
+import { Step } from './Step'
+
+export class Recipe {
+
+    id: number
+    title: String
+    description?: String
+    ingredients: Ingredient[]
+    steps: Step[]
+
+    constructor(){}
+}
