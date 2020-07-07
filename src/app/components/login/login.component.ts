@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if(this.model.email && this.model.password){
       this.authService.login(this.model.email, this.model.password);
-      this.router.navigate(['/recipes']);
     }
   }
 }
